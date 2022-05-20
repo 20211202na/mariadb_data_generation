@@ -4,7 +4,7 @@ import getopt
 import linecache
 
 op_num = 25
-run_num = sys.argv[1]
+r_time = 1
 
 try:
     opts, args = getopt.getopt(sys.argv[1:],"ho:r:",["help","operation_num=","running_times="])
@@ -31,7 +31,7 @@ def get_op(op):
         'tra_id': int(arr[3]),
     }
 
-for i in range(int(run_num)):
+for i in range(int(r_time)):
     folder_name = 'output/' + str(i) + '/'
     file_list = [fn for fn in os.listdir(folder_name) if fn.endswith('.txt')]
     ops = []
