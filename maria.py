@@ -13,9 +13,10 @@ transaction_num = 100 # transacion num of each client
 operation_num = 25 # operation num in each transaction
 threads_num = 20 # client number
 folder_num = 0 # the output folder number
+server = 127.0.0.1
 
 try:
-    opts, args = getopt.getopt(sys.argv[1:],"hw:r:p:t:o:c:n:f:",["help","wo_rate=","ro_rate=","w_percent=","trans_num=","op_num=","client_num=","folder_num="])
+    opts, args = getopt.getopt(sys.argv[1:],"hw:r:p:t:o:c:n:f:s:",["help","wo_rate=","ro_rate=","w_percent=","trans_num=","op_num=","client_num=","folder_num=","server="])
     for opt, arg in opts:
         if opt in ('-w','--wo_rate'):
             wo_rate = float(arg)
@@ -31,11 +32,13 @@ try:
             threads_num = int(arg)
         elif opt in ('-f','--folder_num'):
             folder_num = str(arg)
+	elif opt in ('-s','--server'):
+            server = str(arg)
         elif opt in ('-h','--help'):
-            print("python3 maria.py -w <wo_rate> -r <ro_rate> -p <w_percent> -t <trans_num> -o <op_num> -c <client_num> -f <folder_num>")
+            print("python3 maria.py -w <wo_rate> -r <ro_rate> -p <w_percent> -t <trans_num> -o <op_num> -c <client_num> -f <folder_num> -s <server>")
             sys.exit()
 except getopt.GetoptError:
-    print("python3 maria.py -w <wo_rate> -r <ro_rate> -p <w_percent> -t <trans_num> -o <op_num> -c <client_num>")
+    print("python3 maria.py -w <wo_rate> -r <ro_rate> -p <w_percent> -t <trans_num> -o <op_num> -c <client_num> -s <server>")
     sys.exit()
 
 key_num = 20 # key number in database
@@ -237,7 +240,7 @@ def generate_opt(hist_file, trans_num):
 def run_ops(list_of_ops, client_no):
     op_num = 0
     result_ops = []
-    connect = mariadb.connect(host="155.98.36.56", user="root",password="123456")
+    connect = mariadb.connect(host=server, user="root",password="123456")
     # Disable Auto-Commit
     connect.autocommit = False
     t_count = 0
