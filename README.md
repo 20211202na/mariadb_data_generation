@@ -11,6 +11,11 @@ client_num = 10
 transactions_per_client = 100
 operations_per_transaction = 25
 ```
+Requirements:
+```
+pip3 install mariadb==1.0.11
+```
+
 # Running Steps
 
 ### 1. Run [setup_server.sh](./setup_server.sh) on server node.
