@@ -13,7 +13,7 @@ transaction_num = 100 # transacion num of each client
 operation_num = 25 # operation num in each transaction
 threads_num = 20 # client number
 folder_num = 0 # the output folder number
-server = 127.0.0.1
+server = "127.0.0.1"
 
 try:
     opts, args = getopt.getopt(sys.argv[1:],"hw:r:p:t:o:c:n:f:s:",["help","wo_rate=","ro_rate=","w_percent=","trans_num=","op_num=","client_num=","folder_num=","server="])
