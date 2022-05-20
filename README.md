@@ -19,7 +19,7 @@ pip3 install mariadb==1.0.11
 # Running Steps
 
 ### 1. Run [setup_server.sh](./setup_server.sh) on server node.
-Make sure to change the client_ip_address in line 15 to grant access for client node.
+Make sure to change the `client_ip_address` in line 15 to grant access for client node.
 ```
 bash setup_server.sh
 ```
