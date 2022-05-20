@@ -41,7 +41,7 @@ python3 maria.py -s <server_id> -w <wo_rate> -r <ro_rate> -p <w_percent> -t <tra
 ```
 With the original parameters:
 ```
-python3 maria.py -s <server_ip, e.g., 155.155.155.155>
+python3 maria.py -s <server_ip_address, e.g., 155.155.155.155>
 ```
 The collected traces will be stored in folder `output/folder_num/` where the trace for each client will be stored in a separate txt file; The default `folder_num` is 0.
 
@@ -62,5 +62,5 @@ The format of each operation is: `read/write(variable, value, client_id, transac
   
 ### (Optional) Run [run.sh](./run.sh) to automatically generate workloads and results.
 ```
-bash run.sh <server_ip, e.g., 155.155.155.155> <running_times, e.g., 300>
+bash run.sh <server_ip_address, e.g., 155.155.155.155> <running_times, e.g., 300>
 ```
