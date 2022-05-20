@@ -11,6 +11,6 @@ for ((j=0;j<$run_num;j++));do
 }
 done
 
-python3 group_data.py $run_num
+python3 group_data.py -r $run_num
 wait
 python3 check_rr.py $run_num
