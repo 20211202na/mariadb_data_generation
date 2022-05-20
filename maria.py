@@ -33,7 +33,7 @@ try:
         elif opt in ('-f','--folder_num'):
             folder_num = str(arg)
 	elif opt in ('-s','--server'):
-            server = str(arg)
+	    server = str(arg)
         elif opt in ('-h','--help'):
             print("python3 maria.py -w <wo_rate> -r <ro_rate> -p <w_percent> -t <trans_num> -o <op_num> -c <client_num> -f <folder_num> -s <server>")
             sys.exit()
