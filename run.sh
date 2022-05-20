@@ -5,7 +5,7 @@ run_num=$2
 
 for ((j=0;j<$run_num;j++));do
 {
-    python3 maria.py -f ${j}
+    python3 maria.py -f $j -s $server
     wait
     python3 init.py $server
 }
