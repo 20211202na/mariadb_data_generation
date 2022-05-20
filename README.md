@@ -4,9 +4,6 @@
 ```
 MariaDB version == 10.4.22
 ```
-
-# Example Result
-
 Parameters:
 ```
 key_num = 20
